@@ -9,7 +9,8 @@ public class App {
         System.out.println("Iki Ewangono REKKKKk!!");
         System.out.println("Deni Jancok");
 
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        Scanner str = new Scanner(System.in);
         System.out.print("Masukkan nama Anda: ");
     }
 }
