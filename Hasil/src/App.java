@@ -18,6 +18,7 @@ public class App {
             System.out.print("Aku adalah seorang: ");
             System.out.println("Aku Kangen Deni");
             String role = str.nextLine();
+            System.out.println("Aku adalah seorang " + role);
         }
     }
 }
