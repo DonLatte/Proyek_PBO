@@ -16,6 +16,7 @@ public class App {
 
         while (true) {
             System.out.print("Aku adalah seorang: ");
+            System.out.println("Aku Kangen Deni");
             String role = str.nextLine();
         }
     }
