@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
         //test push
@@ -6,5 +8,8 @@ public class App {
         System.out.println("Proyek PBO");
         System.out.println("Iki Ewangono REKKKKk!!");
         System.out.println("Deni Jancok");
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nama Anda: ");
     }
 }
