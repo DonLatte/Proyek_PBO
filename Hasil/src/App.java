@@ -13,5 +13,10 @@ public class App {
         Scanner str = new Scanner(System.in);
         System.out.print("Masukkan nama Anda: ");
         String nama = str.nextLine();
+
+        while (true) {
+            System.out.print("Aku adalah seorang: ");
+            String role = str.nextLine();
+        }
     }
 }
