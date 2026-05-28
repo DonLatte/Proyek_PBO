@@ -12,5 +12,6 @@ public class App {
         Scanner sc = new Scanner(System.in);
         Scanner str = new Scanner(System.in);
         System.out.print("Masukkan nama Anda: ");
+        String nama = str.nextLine();
     }
 }
