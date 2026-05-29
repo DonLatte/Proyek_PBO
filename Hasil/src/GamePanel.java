@@ -142,7 +142,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
     float fogPulse = 0f;
 
     // ─── Minimap ─────────────────────────────────────────────────────────────
-    static final int MINI_TILE   = 5;   // piksel per tile di minimap
+    static final int MINI_TILE   = 3;   // piksel per tile di minimap
     static final int MINI_MARGIN = 12;  // jarak dari tepi layar
     static final int MINI_BORDER = 2;
 
@@ -585,13 +585,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         g.fillRect(ox + vx, oy + vy, vw, vh);
 
         // ── Hantu (titik putih kecil) ─────────────────────────────────────────
-        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.7f));
-        for (Ghost ghost : ghosts) {
-            int gx = (int)((ghost.x / (map[0].length * TILE_SIZE)) * miniW);
-            int gy = (int)((ghost.y / (map.length   * TILE_SIZE)) * miniH);
-            g.setColor(new Color(180, 200, 180));
-            g.fillOval(ox + gx - 1, oy + gy - 1, 3, 3);
-        }
 
         // ── Pemain (titik merah) ──────────────────────────────────────────────
         int px = (int)((float)(playerX + TILE_SIZE / 2) / (map[0].length * TILE_SIZE) * miniW);
