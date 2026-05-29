@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
  * Sistem Camera:
  *  - Layar mengikuti posisi pemain (viewport terpusat pada karakter)
  *  - Hanya area sekitar pemain yang terlihat di layar utama
- *
+ *\
  * Minimap (pojok kanan bawah):
  *  - Menampilkan seluruh layout map dalam ukuran kecil
  *  - Posisi pemain ditandai dengan titik merah
@@ -375,6 +375,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         g.translate(camX, camY);
 
         drawFogOverlay(g);
+        drawVignette(g);
         drawFlicker(g);
         drawHUD(g);
         drawMinimap(g, camX, camY);
@@ -471,6 +472,32 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         Composite old = g.getComposite();
         g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, flickerAlpha));
         g.setColor(Color.BLACK);
+        g.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        g.setComposite(old);
+    }
+
+    private void drawVignette(Graphics2D g) {
+        // Tepat di tengah sprite pemain (world → screen)
+        int centerX = playerX - cameraX() + TILE_SIZE / 2;
+        int centerY = playerY - cameraY() + TILE_SIZE / 2;
+
+        float innerRadius = 80f;
+        float outerRadius = 220f;
+
+        RadialGradientPaint vignette = new RadialGradientPaint(
+            new java.awt.geom.Point2D.Float(centerX, centerY),
+            outerRadius,
+            new float[] { 0.0f, innerRadius / outerRadius, 1.0f },
+            new Color[] {
+                new Color(0, 0, 0,   0),
+                new Color(0, 0, 0, 120),
+                new Color(0, 0, 0, 255)
+            }
+        );
+
+        Composite old = g.getComposite();
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
+        g.setPaint(vignette);
         g.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         g.setComposite(old);
     }
