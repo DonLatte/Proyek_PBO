@@ -532,7 +532,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         // ── Kontrol ──────────────────────────────────────────────────────────
         g.setFont(new Font("Monospaced", Font.PLAIN, 10));
         g.setColor(new Color(100, 80, 80, 180));
-        g.drawString("WASD: Gerak  SHIFT: Sprint", SCREEN_WIDTH - 200, 18);
     }
 
     /**
@@ -583,8 +582,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         int vw = (int)((float) SCREEN_WIDTH  / (map[0].length * TILE_SIZE) * miniW);
         int vh = (int)((float) SCREEN_HEIGHT / (map.length   * TILE_SIZE) * miniH);
         g.fillRect(ox + vx, oy + vy, vw, vh);
-
-        // ── Hantu (titik putih kecil) ─────────────────────────────────────────
 
         // ── Pemain (titik merah) ──────────────────────────────────────────────
         int px = (int)((float)(playerX + TILE_SIZE / 2) / (map[0].length * TILE_SIZE) * miniW);
