@@ -481,8 +481,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         int centerX = playerX - cameraX() + TILE_SIZE / 2;
         int centerY = playerY - cameraY() + TILE_SIZE / 2;
 
-        float innerRadius = 80f;
-        float outerRadius = 220f;
+        float innerRadius = 35f;
+        float outerRadius = 140f;
 
         RadialGradientPaint vignette = new RadialGradientPaint(
             new java.awt.geom.Point2D.Float(centerX, centerY),
