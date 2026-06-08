@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import javax.imageio.ImageIO;
+import javax.imageio.ImageIO;   
 
 /**
  * GamePanel — panel utama game "Horror Escape"
